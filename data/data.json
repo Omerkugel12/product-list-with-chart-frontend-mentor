@@ -64,28 +64,5 @@
       "price": 6.5
     }
   ],
-  "cart": [
-    {
-      "id": "6c79",
-      "dessert": {
-        "id": "3",
-        "image": "image-macaron-desktop.jpg",
-        "name": "Macaron Mix of Five",
-        "category": "Macaron",
-        "price": 8
-      },
-      "amount": 2
-    },
-    {
-      "id": "b9db",
-      "dessert": {
-        "id": "5",
-        "image": "image-baklava-desktop.jpg",
-        "name": "Pistachio Baklava",
-        "category": "Baklava",
-        "price": 4
-      },
-      "amount": 2
-    }
-  ]
+  "cart": []
 }
