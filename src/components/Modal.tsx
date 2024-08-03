@@ -22,7 +22,7 @@ function Modal({ setModal, cartItems, cartTotalPrice }: PropTypes) {
         <h1 className="text-3xl font-bold">Order Confirmed</h1>
         <p className="text-sm text-rose_400">We hope you enjoy your food!</p>
       </div>
-      <ul className="px-4 py-1 bg-rose_100 rounded-lg">
+      <ul className="px-4 py-1 bg-rose_100 rounded-lg max-h-60 h-full overflow-scroll">
         {cartItems &&
           cartItems.map((cartItem) => {
             const totalPriceItem = cartItem.dessert.price * cartItem.amount;
