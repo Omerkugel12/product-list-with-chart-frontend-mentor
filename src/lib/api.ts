@@ -14,8 +14,14 @@ export async function fetchCartItems() {
   return data;
 }
 
-export async function addToCart(dessert: Dessert) {
-  const response = await axios.post(CART_URL, { dessert });
+export async function addToCart({
+  dessert,
+  amount,
+}: {
+  dessert: Dessert;
+  amount: number;
+}) {
+  const response = await axios.post(CART_URL, { dessert, amount });
   return response.data;
 }
 

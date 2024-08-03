@@ -64,5 +64,50 @@
       "price": 6.5
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": "a3b9",
+      "dessert": {
+        "id": "3",
+        "image": "image-macaron-desktop.jpg",
+        "name": "Macaron Mix of Five",
+        "category": "Macaron",
+        "price": 8
+      },
+      "amount": 1
+    },
+    {
+      "id": "826b",
+      "dessert": {
+        "id": "6",
+        "image": "image-meringue-desktop.jpg",
+        "name": "Lemon Meringue Pie",
+        "category": "Pie",
+        "price": 5
+      },
+      "amount": 1
+    },
+    {
+      "id": "cafb",
+      "dessert": {
+        "id": "2",
+        "image": "image-creme-brulee-desktop.jpg",
+        "name": "Vanilla Bean Crème Brûlée",
+        "category": "Crème Brûlée",
+        "price": 7
+      },
+      "amount": 1
+    },
+    {
+      "id": "ee4d",
+      "dessert": {
+        "id": "5",
+        "image": "image-baklava-desktop.jpg",
+        "name": "Pistachio Baklava",
+        "category": "Baklava",
+        "price": 4
+      },
+      "amount": 1
+    }
+  ]
 }

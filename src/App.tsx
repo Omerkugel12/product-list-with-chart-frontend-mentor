@@ -10,9 +10,11 @@ import { useState } from "react";
 import Modal from "./components/Modal";
 import CartComponent from "./components/CartComponent";
 import DessertsComponent from "./components/DessertsComponent";
+import { queryClient } from "./main";
 
 function App() {
   const [modal, setModal] = useState<boolean>(false);
+  // const [amount, setAmount] = useState<boolean>(false);
 
   const { data, isLoading, isError, error } = useQuery<Dessert[]>({
     queryKey: ["desserts"],
@@ -35,14 +37,76 @@ function App() {
     error: errorAddToCart,
   } = useMutation({
     mutationFn: addToCart,
+    onMutate: async (newCartItem) => {
+      // Cancel any outgoing refetches (so they don't overwrite our optimistic update)
+      await queryClient.cancelQueries({ queryKey: ["cartItems"] });
+
+      // Snapshot the previous value
+      const previousCartItems = queryClient.getQueryData<Cart[]>(["cartItems"]);
+
+      const cartItemToAdd: Cart = {
+        id: `${Math.random()}`, // Generate a temporary id if needed
+        dessert: newCartItem.dessert,
+        amount: newCartItem.amount || 1, // Default to 1 if not provided
+      };
+
+      // Optimistically update to add the item to the cart
+      queryClient.setQueryData<Cart[]>(["cartItems"], (old) =>
+        old ? [...old, cartItemToAdd] : [cartItemToAdd]
+      );
+
+      // Return a context object with the snapshotted value
+      return { previousCartItems };
+    },
+    onError: (err, newCartItem, context) => {
+      // Rollback to the previous cart items on error
+      if (context?.previousCartItems) {
+        queryClient.setQueryData(["cartItems"], context.previousCartItems);
+      }
+    },
+    onSettled: () => {
+      // Always refetch the cart items after mutation success or failure
+      queryClient.invalidateQueries({ queryKey: ["cartItems"] });
+    },
   });
 
   function handleAddToCart(dessert: Dessert) {
-    addToCartMutation(dessert);
+    addToCartMutation({ dessert, amount: 1 });
+    // setAmount(true);
   }
-  const { mutate: removeCartItemMutation } = useMutation({
-    mutationFn: removeCartItem,
-  });
+
+  const { mutate: removeCartItemMutation } = useMutation<void, unknown, string>(
+    {
+      mutationFn: removeCartItem,
+      onMutate: async (itemId) => {
+        // Cancel any outgoing refetches (so they don't overwrite our optimistic update)
+        await queryClient.cancelQueries({ queryKey: ["cartItems"] });
+
+        // Snapshot the previous value
+        const previousCartItems = queryClient.getQueryData<Cart[]>([
+          "cartItems",
+        ]);
+
+        // Optimistically update to remove the item from the cart
+        queryClient.setQueryData<Cart[]>(["cartItems"], (old) =>
+          old?.filter((item) => item.id !== itemId)
+        );
+
+        // Return a context object with the snapshotted value
+        return { previousCartItems };
+      },
+      onError: (err, itemId, context: any) => {
+        // Rollback to the previous cart items on error
+        if (context?.previousCartItems) {
+          queryClient.setQueryData(["cartItems"], context.previousCartItems);
+        }
+      },
+      onSettled: () => {
+        // Always refetch the cart items after mutation success or failure
+        queryClient.invalidateQueries({ queryKey: ["cartItems"] });
+      },
+    }
+  );
 
   function handleRemoveCartItem(cartItemId: string) {
     removeCartItemMutation(cartItemId);

@@ -35,7 +35,7 @@ function CartComponent({
           </div>
         ) : (
           <div className="flex flex-col gap-4">
-            <ul>
+            <ul className="max-h-56 h-full overflow-scroll">
               {cartItems?.map((cartItem) => {
                 const totalPriceItem = cartItem.dessert.price * cartItem.amount;
 
