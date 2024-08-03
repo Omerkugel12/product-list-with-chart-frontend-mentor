@@ -18,3 +18,7 @@ export async function addToCart(dessert: Dessert) {
   const response = await axios.post(CART_URL, { dessert });
   return response.data;
 }
+
+export async function removeCartItem(cartItemId: string) {
+  await axios.delete(`${CART_URL}/${cartItemId}`);
+}

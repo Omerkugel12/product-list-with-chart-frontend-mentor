@@ -66,7 +66,7 @@
   ],
   "cart": [
     {
-      "id": "49d9",
+      "id": "6c79",
       "dessert": {
         "id": "3",
         "image": "image-macaron-desktop.jpg",
@@ -77,35 +77,13 @@
       "amount": 2
     },
     {
-      "id": "e1fc",
-      "dessert": {
-        "id": "2",
-        "image": "image-creme-brulee-desktop.jpg",
-        "name": "Vanilla Bean Crème Brûlée",
-        "category": "Crème Brûlée",
-        "price": 7
-      },
-      "amount": 2
-    },
-    {
-      "id": "8a4a",
+      "id": "b9db",
       "dessert": {
         "id": "5",
         "image": "image-baklava-desktop.jpg",
         "name": "Pistachio Baklava",
         "category": "Baklava",
         "price": 4
-      },
-      "amount": 2
-    },
-    {
-      "id": "e900",
-      "dessert": {
-        "id": "4",
-        "image": "image-tiramisu-desktop.jpg",
-        "name": "Classic Tiramisu",
-        "category": "Tiramisu",
-        "price": 5.5
       },
       "amount": 2
     }
