@@ -5,3 +5,9 @@ export interface Dessert {
   category: string;
   price: number;
 }
+
+export interface Cart {
+  id: string;
+  dessert: Dessert;
+  amount: number;
+}
