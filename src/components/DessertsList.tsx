@@ -9,10 +9,10 @@ interface PropTypes {
 
 function DessertsList({ handleAddToCart, data }: PropTypes) {
   return (
-    <ul className="w-full grid grid-cols-3 gap-4">
+    <ul className="w-full grid grid-cols-1 sm:grid-cols-3 gap-4">
       {data?.map((dessert) => (
         <li key={dessert.id}>
-          <Card className="w-72 h-96 bg-transparent">
+          <Card className="  lg:w-72 h-96 w-full bg-transparent">
             <CardHeader className="relative h-[70%]">
               <img
                 src={`/src/images/${dessert.image}`}

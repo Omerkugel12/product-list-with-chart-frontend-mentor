@@ -66,7 +66,7 @@
   ],
   "cart": [
     {
-      "id": "fd36",
+      "id": "89d9",
       "dessert": {
         "id": "3",
         "image": "image-macaron-desktop.jpg",
@@ -77,57 +77,13 @@
       "amount": 1
     },
     {
-      "id": "d3e5",
-      "dessert": {
-        "id": "2",
-        "image": "image-creme-brulee-desktop.jpg",
-        "name": "Vanilla Bean Crème Brûlée",
-        "category": "Crème Brûlée",
-        "price": 7
-      },
-      "amount": 1
-    },
-    {
-      "id": "623b",
-      "dessert": {
-        "id": "1",
-        "image": "image-waffle-desktop.jpg",
-        "name": "Waffle with Berries",
-        "category": "Waffle",
-        "price": 6.5
-      },
-      "amount": 1
-    },
-    {
-      "id": "7645",
-      "dessert": {
-        "id": "4",
-        "image": "image-tiramisu-desktop.jpg",
-        "name": "Classic Tiramisu",
-        "category": "Tiramisu",
-        "price": 5.5
-      },
-      "amount": 1
-    },
-    {
-      "id": "71b7",
+      "id": "72dc",
       "dessert": {
         "id": "5",
         "image": "image-baklava-desktop.jpg",
         "name": "Pistachio Baklava",
         "category": "Baklava",
         "price": 4
-      },
-      "amount": 1
-    },
-    {
-      "id": "4b24",
-      "dessert": {
-        "id": "3",
-        "image": "image-macaron-desktop.jpg",
-        "name": "Macaron Mix of Five",
-        "category": "Macaron",
-        "price": 8
       },
       "amount": 1
     }

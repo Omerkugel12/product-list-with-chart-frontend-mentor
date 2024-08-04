@@ -8,7 +8,7 @@ interface PropTypes {
 
 function DessertsComponent({ handleAddToCart, data }: PropTypes) {
   return (
-    <div className="max-w-[70%] w-full">
+    <div className="lg:max-w-[70%] w-full">
       <h1 className="text-3xl font-bold mb-7">Desserts</h1>
       <DessertsList handleAddToCart={handleAddToCart} data={data} />
     </div>

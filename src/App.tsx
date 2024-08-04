@@ -139,7 +139,7 @@ function App() {
 
   return (
     <div>
-      <div className="p-20 bg-rose_50 relative">
+      <div className="sm:p-20 p-3 bg-rose_50 relative">
         {modal && (
           <Modal
             setModal={setModal}
@@ -147,7 +147,13 @@ function App() {
             cartTotalPrice={cartTotalPrice}
           />
         )}
-        <div className={modal ? "flex opacity-40" : "flex"}>
+        <div
+          className={
+            modal
+              ? "flex lg:flex-row flex-col opacity-40"
+              : "flex lg:flex-row flex-col"
+          }
+        >
           <DessertsComponent handleAddToCart={handleAddToCart} data={data} />
           <CartComponent
             cartItems={cartItems}
