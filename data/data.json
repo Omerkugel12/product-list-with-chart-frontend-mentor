@@ -66,18 +66,7 @@
   ],
   "cart": [
     {
-      "id": "7a7e",
-      "dessert": {
-        "id": "2",
-        "image": "image-creme-brulee-desktop.jpg",
-        "name": "Vanilla Bean Crème Brûlée",
-        "category": "Crème Brûlée",
-        "price": 7
-      },
-      "amount": 1
-    },
-    {
-      "id": "ec28",
+      "id": "709d",
       "dessert": {
         "id": "3",
         "image": "image-macaron-desktop.jpg",
@@ -88,24 +77,46 @@
       "amount": 1
     },
     {
-      "id": "151a",
+      "id": "625d",
       "dessert": {
-        "id": "2",
-        "image": "image-creme-brulee-desktop.jpg",
-        "name": "Vanilla Bean Crème Brûlée",
-        "category": "Crème Brûlée",
-        "price": 7
+        "id": "3",
+        "image": "image-macaron-desktop.jpg",
+        "name": "Macaron Mix of Five",
+        "category": "Macaron",
+        "price": 8
       },
       "amount": 1
     },
     {
-      "id": "9f99",
+      "id": "4c19",
       "dessert": {
-        "id": "1",
-        "image": "image-waffle-desktop.jpg",
-        "name": "Waffle with Berries",
-        "category": "Waffle",
-        "price": 6.5
+        "id": "3",
+        "image": "image-macaron-desktop.jpg",
+        "name": "Macaron Mix of Five",
+        "category": "Macaron",
+        "price": 8
+      },
+      "amount": 1
+    },
+    {
+      "id": "361c",
+      "dessert": {
+        "id": "3",
+        "image": "image-macaron-desktop.jpg",
+        "name": "Macaron Mix of Five",
+        "category": "Macaron",
+        "price": 8
+      },
+      "amount": 1
+    },
+    {
+      "id": "dd2e",
+      "dessert": {
+        "id": "3",
+        "image": "image-macaron-desktop.jpg",
+        "name": "Macaron Mix of Five",
+        "category": "Macaron",
+        "price": 8
       },
       "amount": 1
     }

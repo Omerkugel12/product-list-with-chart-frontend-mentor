@@ -5,9 +5,16 @@ import { Card, CardContent, CardHeader } from "./ui/card";
 interface PropTypes {
   dessert: Dessert;
   handleAddToCart: (dessert: Dessert) => void;
+  amountController: Boolean;
+  setAmountController: React.Dispatch<React.SetStateAction<Boolean>>;
 }
 
-function DessertItem({ dessert, handleAddToCart }: PropTypes) {
+function DessertItem({
+  dessert,
+  handleAddToCart,
+  amountController,
+  setAmountController,
+}: PropTypes) {
   return (
     <li key={dessert.id}>
       <Card className="  lg:w-72 h-96 w-full bg-transparent">

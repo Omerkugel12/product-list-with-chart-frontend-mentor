@@ -16,7 +16,7 @@ function CartComponent({
   setModal,
 }: PropTypes) {
   return (
-    <div className="lg:max-w-[30%] w-full sm:pl-8 bg-transparent">
+    <div className="xl:max-w-[30%] w-full sm:pl-8 bg-transparent">
       <div className="bg-rose_ w-full bg-white border border-none rounded-lg p-4">
         <h2 className="text-xl text-red_1 font-bold">
           Your Cart ({cartItems?.length})

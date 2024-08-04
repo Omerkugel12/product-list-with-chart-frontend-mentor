@@ -14,7 +14,7 @@ import { queryClient } from "./main";
 
 function App() {
   const [modal, setModal] = useState<boolean>(false);
-  // const [amount, setAmount] = useState<boolean>(false);
+  const [amountController, setAmountController] = useState<Boolean>(false);
 
   const { data, isLoading, isError, error } = useQuery<Dessert[]>({
     queryKey: ["desserts"],
@@ -72,7 +72,7 @@ function App() {
 
   function handleAddToCart(dessert: Dessert) {
     addToCartMutation({ dessert, amount: 1 });
-    // setAmount(true);
+    setAmountController(true);
   }
 
   const { mutate: removeCartItemMutation } = useMutation<void, unknown, string>(
@@ -150,11 +150,16 @@ function App() {
         <div
           className={
             modal
-              ? "flex lg:flex-row flex-col opacity-40"
-              : "flex lg:flex-row flex-col"
+              ? "flex xl:flex-row flex-col opacity-40"
+              : "flex xl:flex-row flex-col"
           }
         >
-          <DessertsComponent handleAddToCart={handleAddToCart} data={data} />
+          <DessertsComponent
+            handleAddToCart={handleAddToCart}
+            data={data}
+            amountController={amountController}
+            setAmountController={setAmountController}
+          />
           <CartComponent
             cartItems={cartItems}
             handleRemoveCartItem={handleRemoveCartItem}
